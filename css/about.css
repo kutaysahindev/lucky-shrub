@@ -1,0 +1,150 @@
+body {
+  font-family: "Dosis", sans-serif;
+  max-width: 1600px;
+  font-size: 1.5rem;
+  margin: 0 auto;
+  background-color: #cad2c5;
+  color: #fefae0;
+}
+
+img {
+  margin-top: 1.75rem;
+}
+
+.container {
+  background-color: #fefae0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "footer";
+  min-height: 100vh;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+header {
+  grid-area: header;
+  text-align: center;
+}
+
+nav {
+  grid-area: nav;
+  background-color: #26877f;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding-inline: unset;
+  list-style: none;
+}
+
+nav li {
+  text-align: center;
+  font-weight: bold;
+}
+
+nav a {
+  display: grid;
+  padding: 0.75rem;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+nav a:hover,
+nav a:focus {
+  transform: scale(1.2);
+}
+
+main {
+  margin-top: -0.25rem;
+}
+
+.promo img {
+  display: grid;
+  max-width: 100%;
+  margin: 0 auto;
+  box-shadow: rgb(0 0 0 / 74%) 0px 3px 8px;
+}
+
+.promo h1 {
+  color: #26877f;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.promo p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #26877f;
+  padding: 20px;
+  line-height: 1.6;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+footer {
+  display: grid;
+  grid-area: footer;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: #26877f;
+  height: 70px;
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+footer img {
+  margin-left: 5rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    grid-template-areas:
+      "header"
+      "main"
+      "footer"
+      "nav";
+  }
+
+  .promo img {
+    margin-top: 0.25rem;
+  }
+
+  nav {
+    display: grid;
+    position: fixed;
+    bottom: 0;
+    z-index: 100;
+    width: 100%;
+  }
+
+  nav ul {
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 0;
+    margin: 0;
+  }
+
+  nav a {
+    font-size: 1.2rem;
+  }
+
+  .promo h1 {
+    font-size: 2rem;
+  }
+
+  main {
+    margin-top: 0;
+  }
+
+  footer {
+    padding-bottom: 55px;
+    font-size: 1.1rem;
+  }
+}
